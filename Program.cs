@@ -45,5 +45,23 @@ while (s != "");
 // Вывод начального массива.
 Console.WriteLine($"Начальный массив: [{string.Join(", ", ArrStrInit)}]\n");
 
+int countNew = 0;
+string[] ArrStrFinal;
+// Нахождение размера массива "ArrStrFinal"
+for (int i = 0; i < ArrStrInit.Length; i++)
+  if (ArrStrInit[i].Length <= 3)
+    countNew++;
+ArrStrFinal = new string[countNew];
+
+// Заполнение массива "ArrStrFinal"
+int i1 = 0;
+for (int i = 0; i < ArrStrInit.Length; i++)
+  if (ArrStrInit[i].Length <= 3)
+  {
+    ArrStrFinal[i1] = ArrStrInit[i];
+    i1++;
+  }
+// Вывод финального массива.
+Console.WriteLine($"Редактированный массив: [{string.Join(", ", ArrStrFinal)}]\n");
 
 // --------------------------------------------------------------
