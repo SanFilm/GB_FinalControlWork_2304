@@ -21,7 +21,29 @@ Console.Clear();
     [“Russia”, “Denmark”, “Kazan”] → []
 */
 // --------------------------------------------------------------
+Console.WriteLine("Введите строки массива:");
+int count = 0;
+string[] ArrStrInit = new string[count];
+string s;
+string[] ArrStrTemp;
 
+// Заполнение массива через консоль.
+do
+{
+  s = Console.ReadLine()!;
+  if (s != "")
+  {
+    count++;
+    ArrStrTemp = new string[count];
+    for (int i = 0; i < ArrStrTemp.Length - 1; i++)
+      ArrStrTemp[i] = ArrStrInit[i];
+    ArrStrTemp[count - 1] = s;
+    ArrStrInit = ArrStrTemp;
+  }
+}
+while (s != "");
+// Вывод начального массива.
+Console.WriteLine($"Начальный массив: [{string.Join(", ", ArrStrInit)}]\n");
 
 
 // --------------------------------------------------------------
